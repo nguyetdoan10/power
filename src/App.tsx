@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Card, Stack, Typography } from "@mui/material";
+import { CurrentPowerSection } from "./components/current-power-section/current-power-section";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Card sx={{ height: 1, minHeight: 380, p: 2 }}>
+      <Typography variant="h5" justifySelf="flex-start" textAlign="center">
+        Current power
+      </Typography>
+      <Stack
+        alignItems="center"
+        justifyContent="center"
+        height="100%"
+        sx={{ pt: 4 }}
+      >
+        <CurrentPowerSection
+          stationPower={320}
+          solarPower={100}
+          gridPower={12}
+          batteryPower={20}
+          loadPower={100}
+        />
+      </Stack>
+    </Card>
   );
 }
 
